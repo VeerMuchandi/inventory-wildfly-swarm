@@ -1,0 +1,47 @@
+package com.redhat.cloudnative.inventory;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "INVENTORY", uniqueConstraints = @UniqueConstraint(columnNames = "itemId"))
+public class Inventory {
+	
+	@Id
+	private String itemId;
+	private int quantity;
+	
+
+	public Inventory() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public String getItemId() {
+		return itemId;
+	}
+
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Inventory [itemId=" + itemId + ", quantity=" + quantity + "]";
+	}
+
+}
